@@ -1,0 +1,30 @@
+
+{% if detail is empty %}
+
+<center><font color="red"><h1>there no authors to display</h1></font></center>
+{%else%}
+
+<center><table border="" cellspacing="10" cellpadding="10">
+<tr>
+    <td>Id</td>
+    <td>Picture</td>
+    <td>Username</td>
+    <td>email</td>
+    <td>nb_books</td>
+
+</tr>
+<tr>
+<td>{{detail.id}}</td>
+<td><img src="{{asset(detail.picture)}}" alt="" height="100" width="100"></td>
+<td>{{detail.username | upper}}</td>
+<td>{{detail.email}}</td>
+<td>{{detail.nb_books}}</td>
+
+<tr>
+
+</tr>
+
+</table>
+<center>
+    {%endif%}
+<br><br><br>

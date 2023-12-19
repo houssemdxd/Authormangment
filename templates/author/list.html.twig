@@ -1,0 +1,36 @@
+
+{% if listauthor is empty %}
+
+<center><font color="red"><h1>there no authors to display</h1></font></center>
+{%else%}
+
+<center><table border="" cellspacing="10" cellpadding="10">
+<tr>
+    <td>Id</td>
+    <td>Picture</td>
+    <td>Username</td>
+    <td>email</td>
+    <td>nb_books</td>
+    <td>Details</td>
+
+</tr>
+{%for i in listauthor%}
+<tr>
+<td>{{i.id}}</td>
+<td><img src="{{asset(i.picture)}}" alt="" height="100" width="100"></td>
+<td>{{i.username | upper}}</td>
+<td>{{i.email}}</td>
+<td>{{i.nb_books}}</td>
+<td><a href="{{ path("author_details", {"id": i.id}) }}">details</a></td>
+
+<tr>
+
+</tr>
+{%endfor%}
+
+</table>
+<center>
+    {%endif%}
+<br><br><br>
+
+<h5>le nombre des auteur est : {{listauthor|length}}   </h5> 

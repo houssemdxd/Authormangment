@@ -1,0 +1,37 @@
+
+{% if listauthor is empty %}
+
+<center><font color="red"><h1>there no authors to display</h1></font></center>
+{%else%}
+
+<center><table border="" cellspacing="10" cellpadding="10">
+<tr>
+    <td>Id</td>
+    <td>Username</td>
+    <td>email</td>
+    <td>Actions</td>
+
+  
+
+</tr>
+{%for i in listauthor%}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.username | upper}}</td>
+<td>{{i.email}}</td>
+<td><a href="{{path('delete_Auth',{'id':i.id})}}">Delete</a>
+    <a href="{{path('edit_Auth',{'id':i.id})}}">Edit</a>
+
+</td>
+
+<tr>
+
+</tr>
+{%endfor%}
+
+</table>
+<center>
+    {%endif%}
+<br><br><br>
+
+<h5>le nombre des auteur est : {{listauthor|length}}   </h5> 
